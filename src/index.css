@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/bricolage-grotesque/index.css';
+@import '@fontsource-variable/jetbrains-mono/index.css';
+
+/* Same palette as the portfolio (ink navy, deep teal, burnt amber) on a plain white ground */
+:root {
+  --radius: 0.75rem;
+  --background: #ffffff;
+  --foreground: #1c2430;
+  --card: #ffffff;
+  --primary: #0b7285;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f5f7;
+  --muted: #f6f8fa;
+  --muted-foreground: #5d6670;
+  --accent: #b45309;
+  --border: #e3e7ec;
+  --input: #c9d1d9;
+  --ring: #0b7285;
+  --ok: #15803d;
+  --destructive: #b91c1c;
+}
+
+@theme inline {
+  --font-display: 'Bricolage Grotesque Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, Consolas, monospace;
+  --font-sans: 'Bricolage Grotesque Variable', 'Segoe UI', system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ok: var(--ok);
+  --color-destructive: var(--destructive);
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { background: #ffffff; scroll-padding-top: 5.5rem; }
+  body { @apply bg-white font-sans text-foreground antialiased; overflow-x: hidden; }
+  ::selection { background: rgba(11, 114, 133, 0.2); }
+  :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+}
+
+.display-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+
+/* Flat white card used across the site */
+.panel {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(28, 36, 48, 0.04), 0 8px 24px -16px rgba(28, 36, 48, 0.18);
+}
+.panel-soft { background: var(--muted); border: 1px solid var(--border); border-radius: 1rem; }
+
+.outline-word { -webkit-text-stroke: 2px var(--primary); color: rgba(11, 114, 133, 0.06); }
+
+* { scrollbar-width: thin; scrollbar-color: #c4ccd4 #fff; }
